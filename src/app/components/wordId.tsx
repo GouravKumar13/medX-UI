@@ -4,6 +4,10 @@ import {
     VerificationLevel,
     ISuccessResult,
 } from '@worldcoin/idkit';
+import Image from 'next/image';
+
+import medicalTeam from "@/../../public/assets/medicalTeam.png"
+import provider from "@/../../public/assets/provider.png"
 
 const WordId = () => {
     const handleVerify = async (proof: ISuccessResult) => {
@@ -33,7 +37,7 @@ const WordId = () => {
             handleVerify={handleVerify}
             onSuccess={onSuccess}
         >
-            {({ open }) => <button onClick={open}> Register here</button>}
+            {({ open }) => <button className='flex gap-3 capitalize text-sm' onClick={open}> <Image src={medicalTeam} width={25} alt='mediacal team' /> Are you a healthcare provider ?</button>}
         </IDKitWidget>
     );
 };

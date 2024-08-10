@@ -8,6 +8,8 @@ import { FaPowerOff } from 'react-icons/fa6';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
 import WordId from './wordId';
+import Image from 'next/image';
+import alchemyLogo from "../../../public/assets/alchemy.png"
 const Navbar = () => {
     const { address } = useAccount({
         type: 'LightAccount',
@@ -16,7 +18,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="border-b-2 border border-black h-fit">
+            <div className="border-b-2  border-black h-fit px-10">
                 <div className="container mx-auto w-full  flex justify-between py-5 ">
                     <Link
                         href={'/'}
@@ -27,10 +29,10 @@ const Navbar = () => {
 
                     {address ? (
                         <div className="flex items-center gap-x-3">
-                            Are you a provider/doctor ?
+
                             <span className="cursor-pointer text-[#157D7A] hover:underline ">
                                 <WordId />
-                      
+
                             </span>
                             <RxAvatar size={30} />
                             <div
@@ -50,6 +52,7 @@ const Navbar = () => {
                                 className="cursor-pointer"
                                 onClick={() => logout()}
                             />
+                            <Image src={alchemyLogo} alt="alchemyLogo" width={25} />
                         </div>
                     ) : (
                         <div className="bg-themelinear px-6 py-2 rounded-lg text-white font-semibold flex items-center gap-x-2 cursor-pointer">
@@ -57,6 +60,7 @@ const Navbar = () => {
                         </div>
                     )}
                 </div>
+
             </div>
         </>
     );
