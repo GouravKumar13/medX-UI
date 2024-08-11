@@ -17,7 +17,7 @@ export const invoices = [
         name: 'Alice Johnson',
         age: 25,
         gender: 'Male',
-        paymentStatus: 'Pending',
+        paymentStatus: '🟡 Pending',
         date: '2024-08-7',
         address: '0x0F284B92d59C8b59E11409495bE0c5e7dBe0dAf9',
         diagnoses: '',
@@ -33,7 +33,7 @@ export const invoices = [
         name: 'Bob Frank',
         age: 35,
         gender: 'Male',
-        paymentStatus: 'Completed',
+        paymentStatus: '🟢 Completed',
         date: '2024-08-11',
         address: '0x2cac89ABf06DbE5d3a059517053B7144074e1CE5',
         attestationId:
@@ -80,7 +80,7 @@ export const invoices = [
         name: 'Bunny',
         age: 20,
         gender: 'Male',
-        paymentStatus: 'Pending',
+        paymentStatus: '🟡 Pending',
         date: '2024-08-15',
         address: '0x260f9FdfD971395634E92b3D574182befb63B33d',
         attestationId: '',
@@ -96,7 +96,7 @@ export const invoices = [
         name: 'Martin',
         age: 34,
         gender: 'Male',
-        paymentStatus: 'Completed',
+        paymentStatus: '🟢 Completed',
         date: '2024-08-21',
         address: '0x8a052Be15eC984320Ae940CBDCCCf8f97BeF1a09',
         attestationId:
@@ -143,7 +143,7 @@ export const invoices = [
         name: 'Steve',
         age: 55,
         gender: 'Male',
-        paymentStatus: 'Completed',
+        paymentStatus: '🟢 Completed',
         date: '2024-08-22',
         address: '0xBb0Ad5E4AA60EE7393e7E51B5071B9b7DC5bbd44',
         docAttestationId:
@@ -222,7 +222,7 @@ export const invoices = [
         name: 'Roman',
         age: 66,
         gender: 'Male',
-        paymentStatus: 'Completed',
+        paymentStatus: '🟢 Completed',
         date: '2024-08-25',
         address: '0xEF8817ef9D776605dD2fF7ae87c7103915F0630f',
         attestationId:
@@ -269,7 +269,7 @@ export const invoices = [
         name: 'Dwane',
         age: 76,
         gender: 'Male',
-        paymentStatus: 'Completed',
+        paymentStatus: '🟢 Completed',
         date: '2024-08-28',
         address: '0x8a052Be15eC984320Ae940CBDCCCf8f97BeF1a09',
         attestationId:

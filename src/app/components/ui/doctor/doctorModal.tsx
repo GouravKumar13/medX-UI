@@ -6,6 +6,9 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { setDoctorAnalysis, setDoctorEasID } from '@/redux/reducer/zkProof';
 import { CiCircleCheck } from 'react-icons/ci';
 import { CiBellOn } from 'react-icons/ci';
+import hcaImage from "../../../../../public/assets/HcaImg.png"
+import WldImg from "../../../../../public/assets/world-id-2.png"
+import WldLogo from "../../../../../public/assets/worldCoinlogo.png"
 import {
     useSendUserOperation,
     useSigner,
@@ -16,6 +19,10 @@ import {
     Dialog,
     DialogPanel,
     DialogTitle,
+    Menu,
+    MenuButton,
+    MenuItem,
+    MenuItems,
     Transition,
     TransitionChild,
 } from '@headlessui/react';
@@ -26,6 +33,8 @@ import { RiExternalLinkLine } from 'react-icons/ri';
 import { Input } from '../Input';
 import ViewPrescriptionModal from '../MedicalModal/ViewPrescription';
 import { storeDoctorProof } from '@/redux/reducer/doctorZk';
+import Image from 'next/image';
+import { RxAvatar } from 'react-icons/rx';
 
 const DoctorModal = ({
     name,
@@ -157,7 +166,7 @@ const DoctorModal = ({
         <>
             {isCreated ? (
                 <div>
-                    <div className="flex items-center gap-x-4">
+                    <div className="flex items-center gap-x-2">
                         <ViewPrescriptionModal
                             name={name}
                             age={age}
@@ -165,20 +174,46 @@ const DoctorModal = ({
                         />
 
                         <div
-                            className="border-2 rounded-xl px-4 py-2 cursor-pointer"
+                            className="border-2 rounded-xl px-2 py-2 cursor-pointer"
                             onClick={handleCopy}
                         >
                             Verify
                         </div>
                     </div>
-                    <div className="font-medium gap-x-1 pt-2 text-sm flex pl-4">
-                        Onchain Attested
+                    <div className="font-medium justify-center gap-x-1 pt-2 text-sm flex items-center">
+
                         <CiCircleCheck color="green" size={25} />
+                        <RxAvatar size={20} />
+                        <span>Dr {name}</span>
+                        <div className=" ">
+                            <Menu >
+                                <MenuButton className="inline-flex items-center gap-2 rounded-md  py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none   data-[focus]:outline-1 data-[focus]:outline-white">
+
+                                    <Image src={WldLogo} alt="wldCoinlogo" width={15} />
+                                </MenuButton>
+
+                                <MenuItems
+                                    transition
+                                    anchor="right start"
+                                    className="w-52 origin-top-right rounded-lg border bg-slate-200   text-sm/6 text-black transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+                                >
+                                    <MenuItem>
+                                        <button className="group flex w-full  items-center gap-2 rounded-lg py-1 px-3 ">
+
+                                            <Image src={WldImg} alt="hclHealthcare Image" width={30} />
+                                            World id verified
+                                        </button>
+                                    </MenuItem>
+
+                                </MenuItems>
+                            </Menu>
+                        </div>
+
                     </div>
                 </div>
             ) : docID ? (
                 <div>
-                    <div className="flex items-center gap-x-4">
+                    <div className="flex items-center  gap-x-4">
                         <ViewPrescriptionModal
                             name={name}
                             age={age}
@@ -189,16 +224,42 @@ const DoctorModal = ({
                         />
                         <div
                             className="border-2 rounded-xl px-4 py-2 cursor-pointer"
-                            // onClick={() =>
-                            //     handleCopyStatic(attestationId, zkProof)
-                            // }
+                        // onClick={() =>
+                        //     handleCopyStatic(attestationId, zkProof)
+                        // }
                         >
                             Verify
                         </div>
                     </div>
                     <div className="font-medium justify-center gap-x-1 pt-2 text-sm flex items-center">
-                        Onchain Attested
+
                         <CiCircleCheck color="green" size={25} />
+                        <RxAvatar size={20} />
+                        <span>Dr {name}</span>
+                        <div className=" ">
+                            <Menu >
+                                <MenuButton className="inline-flex items-center gap-2 rounded-md  py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none   data-[focus]:outline-1 data-[focus]:outline-white">
+
+                                    <Image src={WldLogo} alt="wldCoinlogo" width={15} />
+                                </MenuButton>
+
+                                <MenuItems
+                                    transition
+                                    anchor="right start"
+                                    className="w-52 origin-top-right rounded-lg border bg-slate-200   text-sm/6 text-black transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+                                >
+                                    <MenuItem>
+                                        <button className="group flex w-full  items-center gap-2 rounded-lg py-1 px-3 ">
+
+                                            <Image src={WldImg} alt="hclHealthcare Image" width={30} />
+                                            World id verified
+                                        </button>
+                                    </MenuItem>
+
+                                </MenuItems>
+                            </Menu>
+                        </div>
+
                     </div>
                 </div>
             ) : (
