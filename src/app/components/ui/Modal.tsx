@@ -152,14 +152,13 @@ export default function Modal() {
                                                             gender,
                                                         })
                                                     }
-                                                    className={`${
-                                                        !validationCheck({
-                                                            name,
-                                                            age,
-                                                            gender,
-                                                        }) &&
+                                                    className={`${!validationCheck({
+                                                        name,
+                                                        age,
+                                                        gender,
+                                                    }) &&
                                                         'cursor-not-allowed '
-                                                    } disabled:opacity-50 inline-flex items-center mt-2 gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700`}
+                                                        } disabled:opacity-50 inline-flex items-center mt-2 gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700`}
                                                     onClick={() => {
                                                         handleValidation();
                                                     }}
@@ -187,7 +186,7 @@ export default function Modal() {
                                                     as="h3"
                                                     className=" font-medium text-black"
                                                 >
-                                                    Select chains
+                                                    Payment
                                                 </DialogTitle>
                                                 <Payment
                                                     setCurrentState={

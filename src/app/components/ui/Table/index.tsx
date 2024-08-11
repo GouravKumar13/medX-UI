@@ -16,6 +16,7 @@ import React, { useState } from 'react';
 import { RxAvatar } from 'react-icons/rx';
 import ProviderModal from '../provider/Modal';
 import hacHeltcare from "../../../../../public/assets/HcaImg.png"
+import usdcLogo from "../../../../../public/assets/usdcLogo.png"
 import Image from 'next/image';
 
 export function TableComponent() {
@@ -40,12 +41,12 @@ export function TableComponent() {
     const Provider_Profile = [
         {
             avatar: <RxAvatar size={80} />,
-            name: 'john Smith',
+            name: 'Hac healthcare',
             short_desc: 'Certified Medical Assistant',
-            desc: 'John Smith is a dedicated medical assistant at City Health Clinic, assisting patients with various tasks including taking vital signs, patient documentation, and administrative support. He is known for his compassionate care and attention to detail.',
-            language: 'English, ',
+            desc: 'Hac healthcare is a dedicated medical assistant at City Health Clinic, assisting patients with various tasks including taking vital signs, patient documentation, and administrative support. He is known for his compassionate care and attention to detail.',
+            language: 'US ',
             education: 'Certified Medical Assistant Program, 2020',
-            fees: '$50',
+            fees: '1',
             hospitals: 'City Health Clinic',
         }
     ];
@@ -74,7 +75,7 @@ export function TableComponent() {
                             {avatar}
                             <div className="text-sm text-gray-600">
                                 <div className="text-xl font-semibold">
-                                    <Image src={hacHeltcare} alt="hacheltcare" width={50} className=' backdrop-blur-0' />
+                                    <Image src={hacHeltcare} alt="hacheltcare" width={80} className=' backdrop-blur-0' />
                                 </div>
                                 <p>{short_desc}</p>
                                 <div>{language}</div>
@@ -102,9 +103,9 @@ export function TableComponent() {
                                     {hospitals}
                                 </p>
                             </div>
-                            <div className="text-md text-gray-600 pt-5">
+                            <div className="text-md  text-gray-600 pt-5">
                                 Fees
-                                <p className="text-sm font-normal">{fees}</p>
+                                <p className="text-sm font-normal flex gap-1">{fees} <Image src={usdcLogo} alt="usdclogo" width={20} height={10} /></p>
                             </div>
                         </div>
                     </div>

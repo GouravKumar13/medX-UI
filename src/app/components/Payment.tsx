@@ -1,21 +1,31 @@
+"use client"
 import {
     useSendUserOperation,
     useSmartAccountClient,
 } from '@account-kit/react';
 import { Button } from '@headlessui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { encodeUSDCOperation } from '../lib/func';
+import Image from 'next/image';
+
+import usdcLogo from "../../../public/assets/usdcLogo.png"
+import optimismLogo from "../../../public/assets/optimismLogo.png"
+import baseLogo from "../../../public/assets/baseLogo.svg"
+import ethereumLogo from "../../../public/assets/ethereumLogo.png"
 
 const chains = [
     {
+        logo: optimismLogo,
         title: 'Optimism',
     },
     {
+        logo: baseLogo,
         title: 'Base',
     },
     {
-        title: 'Eth',
+        logo: ethereumLogo,
+        title: 'ethereum ',
     },
 ];
 const Payment = ({
@@ -57,19 +67,37 @@ const Payment = ({
             });
         }
     };
+    const [selectedIndex, setSelectedIndex] = useState(null);
 
+    const handleClick = (index) => {
+        setSelectedIndex(index === selectedIndex ? null : index);
+    };
+
+    console.log(selectedIndex)
     return (
         <div className="pt-5">
-            <div>Fees - 500</div>
+            <div className='flex gap-2'>Fees  1<Image src={usdcLogo} alt="usdclogo" width={25} height={5} /></div>
             <div className="py-3">Chains</div>
             <div className="flex items-center gap-x-4">
                 {chains.map((elem, index) => (
-                    <div
-                        key={index}
-                        className="border-2 rounded-xl px-3 cursor-pointer"
-                    >
-                        {elem.title}
+                    <div key={index} className="flex cursor-pointer">
+                        <button
+                            className={`group relative inline-flex items-center justify-center h-7 ${selectedIndex === index ? 'w-24' : 'w-7'
+                                } overflow-hidden rounded-full bg-gradient-to-t from-[#73c7c4] to-[#7ee3e0] font-medium text-white transition-all duration-300`}
+                            onClick={() => handleClick(index)}
+                        >
+                            <p
+                                className={`inline-flex whitespace-nowrap text-xs transition-all duration-200 ${selectedIndex === index ? 'opacity-100 translate-x-0' : 'opacity-0 group-hover:-translate-x-2.5 group-hover:opacity-100'
+                                    }`}
+                            >
+                                {elem.title}
+                            </p>
+                            <div className="absolute right-1 rounded-full border-[#3aafab] border">
+                                <Image src={elem.logo} alt="chainLogo" width={20} height={20} />
+                            </div>
+                        </button>
                     </div>
+
                 ))}
             </div>
             {loading ? (

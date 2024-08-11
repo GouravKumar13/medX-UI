@@ -36,9 +36,8 @@ const Navbar = () => {
                         </Link>
                         <div className={params === "/verified-doctor" || params === "/healthcare-provider" ? "block" : "hidden"}>
                             <div className='flex items-center gap-2 text-[#157D7A]' >
-                                <Image src={eacLogo} alt="EacLogo" width={30} />
-                                <span> EAS</span>
-                                <Image src={baseLogo} alt="EacLogo" width={20} />
+                                <Image src={eacLogo} alt="EacLogo" width={80} />
+
 
                             </div>
 
@@ -49,7 +48,7 @@ const Navbar = () => {
 
                     {address ? (
                         <div className="flex items-center gap-x-3">
-                            <span className="cursor-pointer text-[#157D7A] hover:underline ">
+                            <span className={`cursor-pointer text-[#157D7A] hover:underline ${params === "/verified-doctor" || params === "/healthcare-provider" ? "hidden" : "block"}`}>
                                 <WordId />
                             </span>
                             <RxAvatar size={30} />

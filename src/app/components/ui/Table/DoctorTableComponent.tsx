@@ -7,6 +7,8 @@ import ViewMedicalModal from '../MedicalModal/ViewMedicalModal';
 import hcaImage from "../../../../../public/assets/HcaImg.png"
 import WldImg from "../../../../../public/assets/world-id-2.png"
 import WldLogo from "../../../../../public/assets/worldCoinlogo.png"
+
+import usdcLogo from "../../../../../public/assets/usdcLogo.png"
 import {
     Table,
     TableBody,
@@ -53,7 +55,7 @@ const DoctorTableComponent = () => {
             desc: 'John Smith is a dedicated medical assistant at City Health Clinic, assisting patients with various tasks including taking vital signs, patient documentation, and administrative support. He is known for his compassionate care and attention to detail.',
             language: 'English, ',
             education: 'Certified Medical Assistant Program, 2020',
-            fees: '$50',
+            fees: '1',
             hospitals: 'City Health Clinic',
         }
     ];
@@ -109,9 +111,9 @@ const DoctorTableComponent = () => {
                                     {hospitals}
                                 </p>
                             </div>
-                            <div className="text-md text-gray-600 pt-5">
+                            <div className="text-md  text-gray-600 pt-5">
                                 Fees
-                                <p className="text-sm font-normal">{fees}</p>
+                                <p className="text-sm font-normal flex gap-1">{fees} <Image src={usdcLogo} alt="usdclogo" width={20} height={10} /></p>
                             </div>
                         </div>
                     </div>
@@ -179,7 +181,7 @@ const DoctorTableComponent = () => {
                                                     <Menu >
                                                         <MenuButton className="inline-flex items-center gap-2 rounded-md  py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none   data-[focus]:outline-1 data-[focus]:outline-white">
 
-                                                            <Image src={WldLogo} alt="wldCoinlogo" width={20} />
+                                                            <Image src={WldLogo} alt="wldCoinlogo" width={15} />
                                                         </MenuButton>
 
                                                         <MenuItems
@@ -190,7 +192,7 @@ const DoctorTableComponent = () => {
                                                             <MenuItem>
                                                                 <button className="group flex w-full  items-center gap-2 rounded-lg py-1 px-3 ">
 
-                                                                    <Image src={WldImg} alt="hclHealthcare Image" width={35} />
+                                                                    <Image src={WldImg} alt="hclHealthcare Image" width={30} />
                                                                     World id verified
                                                                 </button>
                                                             </MenuItem>

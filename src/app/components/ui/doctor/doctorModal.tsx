@@ -184,7 +184,7 @@ const DoctorModal = ({
 
                         <CiCircleCheck color="green" size={25} />
                         <RxAvatar size={20} />
-                        <span>Dr {name}</span>
+                        <span>Dr Shikha </span>
                         <div className=" ">
                             <Menu >
                                 <MenuButton className="inline-flex items-center gap-2 rounded-md  py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none   data-[focus]:outline-1 data-[focus]:outline-white">
@@ -235,7 +235,7 @@ const DoctorModal = ({
 
                         <CiCircleCheck color="green" size={25} />
                         <RxAvatar size={20} />
-                        <span>Dr {name}</span>
+                        <span>Dr Shikha </span>
                         <div className=" ">
                             <Menu >
                                 <MenuButton className="inline-flex items-center gap-2 rounded-md  py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none   data-[focus]:outline-1 data-[focus]:outline-white">
